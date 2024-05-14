@@ -69,5 +69,9 @@ Route::put('/edit-task/{task}', function(Task $task, TaskRequest $request){
 
 
  Route::delete('/delete-task/{task}', function(Task $task){
+    $task->delete();
 
- });
+    return redirect()->route('tasks.index')->with('success', "Task was deleted!");
+ })->name('tasks.delete-task');
+
+ 
