@@ -16,4 +16,10 @@
 <h3> {{$task->long_description}} </h3>
 
 <a href=" {{route('tasks.edit', ['task' => $task->id])}} ">-> Edit this task</a>
+<form action="{{route('tasks.delete-task', ['task' => $task->id])}}" method="POST">
+    @csrf
+    @method('DELETE')
+
+    <button type="submit">Delete</button>
+</form>
 @endsection
