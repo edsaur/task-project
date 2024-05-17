@@ -17,4 +17,5 @@
     @empty
     <h2>There are no tasks!</h2>
 @endforelse
+{{$tasks->links()}}
 @endsection
