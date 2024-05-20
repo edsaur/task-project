@@ -10,9 +10,11 @@
     
 @endif
 
-<a href="{{route('tasks.create')}}">Create a new task</a>
+<nav class="mb-4">
+    <a href="{{route('tasks.create')}}" class="bg-sky-500 hover:bg-sky-700">Create a new task</a>
+</nav>
 @forelse ($tasks as $task)
-    <p> <a href="{{route('tasks.show', ['task' => $task->id])}}">Task {{$task->id}} -> {{$task->title}}</a></p>
+    <p class="container mt-5 mx-w-lg"> <a href="{{route('tasks.show', ['task' => $task->id])}}">Task {{$task->id}} -> {{$task->title}}</a></p>
 
     @empty
     <h2>There are no tasks!</h2>
