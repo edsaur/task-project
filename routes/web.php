@@ -74,4 +74,10 @@ Route::put('/edit-task/{task}', function(Task $task, TaskRequest $request){
     return redirect()->route('tasks.index')->with('success', "Task was deleted!");
  })->name('tasks.delete-task');
 
+ Route::put('/task/{task}/completed', function(Task $task) {
+        $task->toggleComplete();
+
+        return redirect()->back()->with('success', "Task updated successfully!");
+ })->name('task.task-completed');
+
  
