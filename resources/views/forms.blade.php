@@ -46,7 +46,7 @@
     <textarea name="long_description" id="long_description" rows="5">{{$task->long_description ?? old('long_description')}}</textarea>
 </div>
 
-    <button type="submit" name="submit">
+    <button type="submit" name="submit" class="btn-success">
         @isset($task)
         Edit Task
         @else 
