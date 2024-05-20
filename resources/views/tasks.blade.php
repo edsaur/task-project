@@ -15,7 +15,25 @@
 <h2> {{$task->description}} </h2>
 <h3> {{$task->long_description}} </h3>
 
-<a href=" {{route('tasks.edit', ['task' => $task->id])}} ">-> Edit this task</a>
+<div>
+    @if ($task->completed)
+        <p>Task is already completed!</p>
+    @else
+        <p>Task is not yet done!</p>
+    <a href=" {{route('tasks.edit', ['task' => $task])}} ">-> Edit this task</a>
+    @endif
+</div>
+
+
+<div>
+    <form action="{{route('task.task-completed', ['task' => $task])}}" method="POST">
+        @csrf
+        @method('PUT')
+
+        <button type="submit">Mark as {{$task->completed ? 'not completed' : 'done'}}</button>
+    </form>
+</div>
+
 <form action="{{route('tasks.delete-task', ['task' => $task->id])}}" method="POST">
     @csrf
     @method('DELETE')
