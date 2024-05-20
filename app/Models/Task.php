@@ -11,4 +11,11 @@ class Task extends Model
 
     protected $fillable = ['title', 'description', 'long_description']; // Only fillable items
     // protected $guarded = ['password'] to guard this specific column.
+
+
+    public function toggleComplete() {
+        $this->completed = !$this->completed;
+
+        $this->save();
+    }
 }
