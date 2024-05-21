@@ -6,7 +6,7 @@
 @section('content')
 
 @if (session()->has('success'))
-<p> {{session('success')}} </p>
+<p class="success"> {{session('success')}} </p>
     
 @endif
 

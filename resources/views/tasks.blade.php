@@ -10,10 +10,6 @@
 @section('title', "Task {$task->id} -> {$task->title}")
 
 @section('content')
-@if (session()->has('success'))
-    <p> {{session('success')}} </p>
-@endif
-
 
 <p class="mb-4 text-slate-700 text-sm"> {{$task->description}} </p>
 <p class="mb-4 text-slate-700 text-2xl"> {{$task->long_description}} </p>
